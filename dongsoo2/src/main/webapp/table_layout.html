@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>표 스타일</title>
+		<style>
+			body { font-family:"맑은 고딕", "고딕", "굴림"; }
+			table, td { border:1px solid #ccc; }
+			.table1 {
+				border-collapse:collapse; /* 겹쳐지는 테두리 하나로 합쳐서 표시 */
+				width:300px;			/* 표 너비 */
+				table-layout:fixed;		/* 표 너비 고정 */
+				word-break:break-all; 	/* 텍스트 줄 바꿈 */
+				height:auto;
+			}
+			.table1 td {
+				width:150px;
+				border:1px solid black;
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Table Layout</h1>
+		<table class="table1">
+			<tr>
+				<td>한글로띄어쓰기없기길게붙여쓰기</td>
+				<td>long_description_without_space</td>
+			</tr>	
+		</table>
+	</body>
+</html>
