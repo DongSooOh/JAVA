@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>오동수_3번</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+							
+				// 이름
+				const input_name = document.querySelector('#user_name');
+				const output_name = document.querySelector('.name');
+				
+			 	input_name.addEventListener('keyup', (event) => {		
+			 		const value_name = event.currentTarget.value;
+			 		output_name.textContent = `${value_name}`;
+			 	/* 	event.currentTarget은 이벤트가 발생한 요소를 가리킴.
+			 		그 발생한 요소의 value 속성은 해당 입력필드의 값을 나타냄.
+			 		따라서 입력필드의 값을 output_name.textContent에 할당함으로써
+			 		위 2줄을 'output_name.textContent = event.currentTarget.value;'로 간략하게 작성이 가능 */
+			 	})
+			 	
+		 		// 과목
+				const inputs = document.querySelectorAll('.test');
+				const sum = document.querySelector('.sum');
+				const ave = document.querySelector('.ave');
+					
+				class Student {
+					constructor (name, kor, eng, mat, sci) {
+						this.name = name;
+						this.kor = kor;
+						this.eng = eng;
+						this.mat = mat;
+						this.sci = sci;
+					}
+					
+					getSum () {
+						return Number(this.kor) + Number(this.eng) + Number(this.mat) + Number(this.sci);
+					} // this.kor 등은 문자열 형태로 저장되어 있어, Number() 함수를 사용해서 문자열을 숫자로 변환
+					getAverage () {
+						return this.getSum() / 4;
+					}
+				}
+				
+				const student = new Student(kor_value, eng_value, mat_value, sci_value);
+		})
+		</script>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>성적 입력</legend>
+					<p>이름: <input type="text" id="user_name"></p>
+					<span>국어: <input type="number" class="test" name="kor" min="0" max="100">점</span>
+					<span>영어: <input type="number" class="test" name="eng" min="0" max="100">점</span>
+					<span>수학: <input type="number" class="test" name="mat" min="0" max="100">점</span>
+					<span>과학: <input type="number" class="test" name="sci" min="0" max="100">점</span>
+					<p><input type="submit" value="제출하기"></p>
+			</fieldset>
+			<fieldset>
+				<legend>성적표</legend>
+					<div>
+						<p>이름: <span class="name"></span></p>
+						<p>총점: <output class="sum"></output></p>
+						<p>평균: <output class="ave"></output></p>
+					</div>	
+			</fieldset>
+		</form>
+	</body>
+</html>

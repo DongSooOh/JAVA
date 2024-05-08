@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const h1 = document.querySelector('h1');
+				const print = (event) => {
+					let output = '';
+					output += `alt: ${event.altKey}<br>`;
+					output += `ctrl: ${event.ctrlKey}<br>`;
+					output += `shift: ${event.shiftKey}<br>`;
+					output += `code: ${typeof(event.code) !== 'undefined' ? event.code : event.keyCode}<br>`;
+					// 조건 ? 참 : 거짓/ event.code가 있으면 event.code를 출력, undefined라면 event.keyCode를 출력
+					h1.innerHTML = output;
+				};
+				
+				document.addEventListener('keydown', print); // 키가 눌릴 때 출력
+				document.addEventListener('keyup', print); // 키가 떨어질 때 출력
+			});
+		</script>
+	</head>
+	<body>
+		<h1></h1>
+	</body>
+</html>

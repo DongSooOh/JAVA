@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const divs = document.querySelectorAll('body > div') // <body> 하위 <div> 태그
+				
+				divs.forEach((div, index) => { // div 개수만큼 반복(forEach())하여 출력
+					console.log(div, index)
+					const val = index * 10	// 인덱스는 0부터 <body> 내부의 <div>개수만큼 반복
+					div.style.height = `10px` // 크기 지정할 때는 반드시 단위와 함께 붙여줘야 함
+					div.style.backgroundColor = `rgba(${val}, ${val}, ${val})`
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+	</body>
+</html>

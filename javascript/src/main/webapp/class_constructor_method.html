@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>class_constructor_method</title>
+		<script>
+			class Student { // Student 클래스(대문자) 선언 (클래스 구성요소: 1.필드, 2.메소드, 3.생성자)
+			// 필드와 메소드는 필수가 아니나, 생성자는 있음.(최소 매개변수가 없는 자동 생성자라도 보유)
+				constructor (이름, 국어, 영어, 수학, 과학) { // constructor 메소드(생성자) 선언
+					this.이름 = 이름; // 'this.이름'에서 '이름'은 필드명, 뒤의 '이름'은 매개변수.
+					this.국어 = 국어; // 필드는 힙 영역에 생성됨.
+					this.영어 = 영어; // 여기서 this.는 아래 new 예약어로 생성된 객체의 주소값을 불러줌
+					this.수학 = 수학; // new Student('구름')의 주소값이 '0X50'번지면 this.는 '0X50'번지 값을 불러줌
+					this.과학 = 과학;
+				}
+			
+				getSum () { // 메소드
+					return this.국어 + this.영어 + this.수학 + this.과학;
+				/* 메소드들은 메소드 영역에 있으므로 getSum ()을 정확하게 호출한 곳으로 값을 보내주기 위해 'return' 사용
+				 + 추가로 아래 행이 있는 상황에서 수행하고 싶지 않을 때 해당 행에 return을 사용하여 아래는 실행하지 않을 수 있음. 
+				   값을 함수를 호출한 곳으로 정확하게 전달하기 위함 */ 
+				}
+				
+				getAverage () {
+					return this.getSum() / 4;
+				}
+				
+				toString () { // 메소드 오버라이딩 + 상속
+					return `${this.이름}\t${this.getSum()}점\t${this.getAverage()}점\n`
+				}
+			}
+			
+			const students = []; // students 배열 선언
+			students.push(new Student('구름', 87, 98, 88, 90)); // push()와 new Student()처럼 한 행에 2개 이상의 메소드가 있을 경우 무조건 우측부터 수행 
+			students.push(new Student('별이', 92, 98, 96, 88));
+			students.push(new Student('겨울', 76, 96, 94, 86));
+			students.push(new Student('바다', 98, 52, 98, 92));
+			
+			
+			let output = '이름\t총점\t평균\n'
+			
+			for (const s of students) { // for of 반복문: of 뒤에 있는 인덱스의 값(정확히는 주소값)을 of 앞에 대입
+				output += s.toString(); // output += s;라고만 해도 toString()이 실행되어 동일한 값이 나오나 
+			// 코드의 의도를 명확히 전달, 코드의 가독성과 명시성을 높이기 위해 표준('toString()')으로 호출
+			}
+			
+			console.log(output);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

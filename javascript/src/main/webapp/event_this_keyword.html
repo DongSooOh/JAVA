@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_this_keyword</title>
+		<script>
+			const listener = function (event) {
+				const length = this.value.length;
+				// this 키워드는 화살표 함수가 아닌, function () {} 형태에서만 사용이 가능
+				h1.textContent = `글자 수: ${length}`; // this가 textarea가 됨
+			};
+			document.addEventListener('DOMContentLoaded', () => {
+				const textarea = document.querySelector('textarea');
+				const h1 = document.querySelector('h1');
+				textarea.addEventListener('keyup', listener);
+			});
+		</script>
+	</head>
+	<body>
+		<textarea>A</textarea>
+		<h1>B</h1>
+	</body>
+</html>

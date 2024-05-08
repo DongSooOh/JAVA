@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>exception_divide_throw</title>
+		<script>
+			function divide(a, b) { // divide(A, B): A를 B로 나눔
+				if (b === 0) { // b가 0이라면
+					throw '0으로 나눌 수 없습니다.';
+				}
+				return a / b; // b가 0이 아니면
+			}
+			
+			console.log(divide(10, 2));
+			console.log(divide(10, 0));
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

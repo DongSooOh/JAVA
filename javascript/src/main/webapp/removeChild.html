@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>removeChild</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				setTimeout(() => {
+					const h1 = document.querySelector('h1');
+					
+					h1.parentNode.removeChild(h1);
+					/* 'document.body.removeChild(h1)'처럼 부모 객체를 알면 제거가 가능
+					 	문서(자식) 객체.parentNode.removeChild(문서 객체) or 부모 객체.removeChild(자식 객체) 
+					 	두 방법 다 가능하나 문서 객체.parentNode.removeChild(문서 객체)를 더 사용 */
+				}, 2000); // 2초(2000) 뒤 제거
+			});
+		</script>
+	</head>
+	<body>
+		<hr>
+		<h1>제거 대상 문서 객체</h1>
+		<hr>
+	</body>
+</html>

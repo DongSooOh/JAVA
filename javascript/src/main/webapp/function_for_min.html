@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>function_for_min</title>
+		<script>
+			function min(array) {
+				let output = array[0];
+				for ( const item of array ) { // for of는 of 뒤에 있는 배열의 '요소'를 of 앞으로 대입
+					if ( output > item ) {	// for in은 in 뒤에 있는 배열의 '인덱스'를 in 앞으로 대입
+						output = item;
+					}
+				}
+				return output;
+			}
+			
+			const testArray = [52, 273, 32, 103, 275, 24, 57];
+			console.log(`${testArray} 중에서의`);
+			console.log(`최솟값: ${min(testArray)}`);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

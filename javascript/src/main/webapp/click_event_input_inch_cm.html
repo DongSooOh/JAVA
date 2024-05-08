@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>click_event_input_inch_cm</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const input = document.querySelector('input');
+				const button = document.querySelector('button');
+				const p = document.querySelector('p');
+				
+				button.addEventListener('click', () => {
+					const inch = Number(input.value) // 입력을 숫자로 변환
+					
+					if (isNaN(inch)) { // isNaN(Not a Number)로 숫자가 아닌지 확인, 숫자면 F, 문자면 T 반환
+						p.textContent = '숫자를 입력해주세요.';
+						return;
+					};
+					
+					const cm = inch * 2.54;
+					p.textContent = `${cm}cm`;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text"> inch<br>
+		<button>계산하기</button>
+		<p></p>
+	</body>
+</html>

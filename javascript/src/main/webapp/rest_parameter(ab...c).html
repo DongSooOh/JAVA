@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>rest_parameter(ab...c)</title>
+		<script>
+			function sample(a, b, ...c) { // 나머지 매개변수(...)는 매개변수의 마지막에 위치
+				console.log(a, b, c);	  // 그렇지 않으면 오류발생
+			}
+			
+			sample(1, 2);
+			sample(1, 2, 3);
+			sample(1, 2, 3, 4);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

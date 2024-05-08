@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>override</title>
+		<script>
+			class LifeCycle { // LifeCycle 클래스: 자동 생성자 + 메소드 4개
+				call () { // 1번 메소드
+					this.a ();
+					this.b ();
+					this.c ();
+				}
+				
+				a () { console.log('a () 메소드를 호출합니다.'); } // 2번 메소드(해당 부분 자식 클래스에서 오버라이드))
+				b () { console.log('b () 메소드를 호출합니다.'); } // 3번 메소드
+				c () { console.log('c () 메소드를 호출합니다.'); } // 4번 메소드
+			}
+			
+			class Child extends LifeCycle { // 자식 클래스 extends 부모 클래스
+			// Child 클래스: 자동 생성자 + 메소드 1개 
+				a () { // 1번 메소드(오버라이드(재정의))
+					console.log('자식의 a () 메소드입니다.');
+				}
+			}
+			
+			new Child().call();
+		/* 	new Child(): new 예약어로 Child 클래스의 생성자를 호출하여 인스턴스 생성
+			.call(): 이후 call 메소드를 호출하나 Child에는 call()가 없어 상위 주소로 이동하여 call() 실행하는데
+			여기서 this.는 Child로 Child의 a() 메소드가 실행, 나머진 없으므로 LifeCycle에서 b(), c() 실행
+			
+			일반적으로 자바스크립트에서는 함수의 호출이 좌측부터 우측 순으로 이루어짐.
+			그러나 연산자 우선순위와 결합 방향에 따라 실행 순서가 변경됨
+			ex) 'students.push(new Student('구름', 87, 98, 88, 90))'에서는 new Student()가 먼저 실행되어 student 객체 생성
+			이후 생성된 객체가 push()에 의해 students 배열에 추가 */
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

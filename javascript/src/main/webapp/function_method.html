@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>function_method</title>
+		<script>
+			const pet = {
+					name: '구름',
+					eat (food) { // eat은 콜백 함수의 역할
+						alert(this.name + '은(는) ' + food + '을(를) 먹습니다.' );
+					}
+					
+			};
+			
+			pet.eat('밥'); // pet.eat();처럼 매개변수가 없을 경우 에러가 발생(eat(food)로 매개변수가 있기 때문)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

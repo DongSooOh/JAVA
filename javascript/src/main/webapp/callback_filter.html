@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>callback_filter</title>
+		<script>
+			const numbers = [0, 1, 2, 3, 4, 5];
+			const evenNumbers = numbers.filter(function (value) {
+				return value % 2 === 0;
+			});
+			const oddNumbers = numbers.filter(function (value) {
+				return value % 2 === 1;
+			});
+			
+			console.log(`원래 배열: ${numbers}`);
+			console.log(`짝수만 추출: ${evenNumbers}`);
+			console.log(`홀수만 추출: ${oddNumbers}`);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

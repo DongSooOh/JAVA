@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>key_style_position</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const star = document.querySelector('h1');
+				star.style.position = 'absolute'; // style 속성으로 position 값 설정
+				
+				let [x, y] = [0, 0];
+				const block = 20;
+				const print = () => {
+					star.style.left = `${x * block}px`;
+					star.style.top = `${y * block}px`;
+				};
+				print();
+				
+				const [left, up, right, down] = [37, 38, 39, 40]; // 방향키 keycode(키코드)를 쉽게 사용할 수 있도록 변수를 사용하여 이름을 붙임
+				document.body.addEventListener('keydown', (event) => { // 키보드가 눌릴 때 실행
+					switch (event.keyCode) {
+						case left:
+							x -= 1;
+							break;
+						case up:
+							y -= 1;
+							break;
+						case right:
+							x += 1;
+							break;
+						case down:
+							y += 1;
+							break;
+					}
+					print();
+				});
+			});
+		</script>
+		<style>
+			h1 { margin:0; }
+		</style>
+	</head>
+	<body>
+		<h1>◈</h1>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>lodash_sortBy</title>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+		<script>
+			const books = [{
+				name: "혼자 공부하는 파이썬",
+				price: 18000,
+				publisher: "한빛미디어"
+			}, {
+				name: "HTML5 웹 프로그래밍 입문",
+				price: 26000,
+				publisher: "한빛아카데미"
+			}];
+			
+			const output = _.sortBy(books, (book) => book.price); // .sortBy() 앞의 언더바(_)는 라이브러리 함수를 사용하고 있다는 의미
+			// _.sortBy(정렬할 배열, 정렬 기준)
+			console.log(JSON.stringify(output, null, 2));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

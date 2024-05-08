@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>createElement_appendChild</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const header = document.createElement('h1'); // h1 태그 생성
+				
+				header.textContent = '문서 객체 동적으로 생성하기'; // 입력된 문자열을 그대로 넣음 
+				header.setAttribute('data-custom', '사용자 정의 속성'); // setAttribute(속성 이름, 값)
+				header.style.color = 'white';
+				header.style.backgroundColor = 'black';
+				
+				document.body.appendChild(header);
+			})
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

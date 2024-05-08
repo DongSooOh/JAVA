@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>change_event_select</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const select = document.querySelector('select');
+				const p = document.querySelector('p');
+				
+				select.addEventListener('change', (event) => {
+					const options = event.currentTarget.options; // 여기서 event.currentTarget은 <select>를 참조
+					const index = event.currentTarget.options.selectedIndex;
+					
+					p.textContent = `선택: ${options[index].textContent}`; // 선택한 option 태그를 추출
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<select>
+			<option>이마트</option>
+			<option>코스트코</option>
+			<option>홈플러스</option>
+			<option>롯데마트</option>
+		</select>
+		<p>선택: 이마트</p>
+	</body>
+</html>

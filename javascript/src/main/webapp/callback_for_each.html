@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>callback_for_each</title>
+		<script>
+			const numbers = [273, 52, 103, 32, 57];
+			
+			numbers.forEach(function(value, index, array) { // 매개변수로 value, index, array를 갖는 콜백 함수를 사용
+			// forEach()는 배열이 갖고 있는 함수로써 단순하게 배열 내부의 요소를 사용하여 콜백 함수를 호출
+				console.log(`${index}번째 요소: ${value}`);
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

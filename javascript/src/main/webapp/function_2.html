@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>function_2</title>
+		<script>
+			function func() {
+				console.log('함수 내부의 코드입니다 ... 1');
+				console.log('함수 내부의 코드입니다 ... 2');
+				console.log('함수 내부의 코드입니다 ... 3');
+				console.log(''); // 줄바꿈 역할
+			}
+			// 함수 호출(스택 영역)
+			func(); // alert(), prompt()는 명령함수로 전혀 다름
+			func(); 
+			
+			console.log(typeof func); // 함수의 자료형(function) 확인
+			console.log(func);
+			/* ƒ () {
+				console.log('함수 내부의 코드입니다 ... 1');
+				console.log('함수 내부의 코드입니다 ... 2');
+				console.log('함수 내부의 코드입니다 ... 3');
+				console.log(''); // 줄바꿈 역할
+			}가 출력됨(익명함수) 단, 명시적(선언) 함수로 익명 함수와는 다름 */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_total_practice</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// 이름
+				const input_n = document.querySelector('#user_name');
+				const name_p = document.querySelector('.name');
+				
+			 	input_n.addEventListener('keyup', (event) => {
+			 		const value_n = event.currentTarget.value; // input 값에는 event.currentTarget.value로 값을 불러옴
+			 		
+			 		name_p.textContent = `${value_n}`;
+			 	})
+				
+				// E-mail						
+				const input = document.querySelector('#user_mail');
+				const p = document.querySelector('.mail');
+							
+				const email = (value) => {
+					return (value.indexOf('@') > 1) && (value.split('@')[1].indexOf('.') > 1);
+				};
+				input.addEventListener('keyup', (event) => {
+					const value = event.currentTarget.value;
+					
+					if (email(value)) {
+						p.style.color = 'blue';
+						p.textContent = `${value}는 이메일 형식입니다.`;
+					} else {
+						p.style.color = 'red';
+						p.textContent = `${value}는 이메일 형식이 아닙니다.`;
+					}
+				})
+				
+				// 학력
+				const select = document.querySelector('select');
+				const school_p = document.querySelector('.school')
+				
+				select.addEventListener('change', (event) => {
+					const options = event.currentTarget.options;
+					const index = event.currentTarget.options.selectedIndex;
+					
+					school_p.textContent = `${options[index].textContent}`;
+				})
+				
+				// 좋아하는 동물
+				const radios = document.querySelectorAll('[name=pet]');
+				const output_p = document.querySelector('.pet');
+								
+				radios.forEach((radio) => {
+					radio.addEventListener('change', (event) => {
+						const current = event.currentTarget;
+						
+						if (current.checked) {
+							output_p.textContent = `${current.value}`;
+						}
+					})
+				})
+				
+				// 좋아하는 라멘
+				const checkboxs = document.querySelectorAll('[name=ramen]');
+				const output_r = document.querySelector('.ramen');
+				
+				checkboxs.forEach((checkbox) => {
+					checkbox.addEventListener('change', (event) => {
+						const list = [];
+						
+						for (const checkbox of checkboxs) {
+							if (checkbox.checked) {
+								list.push(checkbox.value); 
+							}
+						}
+						output_r.textContent = `${list.join(', ')}`;
+					})
+					
+				})
+					
+			})
+		</script>
+		<style>
+			ul { list-style: none; margin:10px 0; padding:0; }
+			ul li { margin: 5px; }
+		</style>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>입력정보</legend>
+					<p><label for="user_name">이름 <input type="text" id="user_name"></label></p>
+					<p><label for="user_mail">E-mail <input type="email" id="user_mail"></label></p>
+					<p>학력
+					<select>
+						<option value="유치원">유치원</option>
+						<option value="초등학교">초등학교</option>
+						<option value="중학교">중학교</option>
+						<option value="고등학교">고등학교</option>
+						<option value="대학교">대학교</option>
+						<option value="대학원">대학원</option>
+					</select>
+					</p>
+					<p>좋아하는 동물</p>
+						<input type="radio" name="pet" value="강아지">
+						<span>강아지</span>
+						<input type="radio" name="pet" value="고양이">
+						<span>고양이</span>
+						<input type="radio" name="pet" value="토끼">
+						<span>토끼</span>
+						<input type="radio" name="pet" value="양">
+						<span>양</span>	
+					<p>좋아하는 라멘</p>
+						<input type="checkbox" name="ramen" value="츠케멘">
+						<span>츠케멘</span>
+						<input type="checkbox" name="ramen" value="이에케라멘">
+						<span>이에케라멘</span>
+						<input type="checkbox" name="ramen" value="카라파이탄라멘">
+						<span>카라파이탄라멘</span>
+						<input type="checkbox" name="ramen" value="쇼유라멘">
+						<span>쇼유라멘</span>
+					<p><input type="submit" value="제출하기"></p>
+			</fieldset>
+			<fieldset>
+				<legend>입력정보 확인</legend>
+					<p>이름: <span class="name"></span></p>
+					<p>E-mail: <span class="mail"></span></p>
+					<p>학력: <span class="school"></span></p>
+					<p>종아하는 동물: <span class="pet"></span></p>
+					<p>좋아하는 라멘: <span class="ramen"></span></p>
+			</fieldset>
+		</form>
+	</body>
+</html>

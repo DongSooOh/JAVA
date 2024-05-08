@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>for_if_continue</title>
+		<script>
+			let output = 0;
+			
+			for ( let i = 1; i <= 10; i++) {
+				
+				if (i % 2 === 1) { // i의 값이 홀수인지 확인하는 조건문
+					continue; // i가 홀수면 아래 output += i;를 생략하고 i++로 돌아감.
+				}
+				
+				output += i;
+			}
+			
+			alert(output);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

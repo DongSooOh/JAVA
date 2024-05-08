@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>LeapYear</title>
+		<script>
+			function isLeapYear(year) {
+				return (year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0);
+			} /* 	'A && B || C'의 경우 일반적인 산술과 동일하게 위치에 상관없이 곱을 먼저 계산
+					따라서 &&를 먼저 실행한 후 || 실행(&&가 뒤에 있어도 동일) */
+			console.log(`2020년은 윤년일까? === ${isLeapYear(2020)}`);
+			console.log(`2010년은 윤년일까? === ${isLeapYear(2010)}`);
+			console.log(`2000년은 윤년일까? === ${isLeapYear(2000)}`);
+			console.log(`1900년은 윤년일까? === ${isLeapYear(1900)}`);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

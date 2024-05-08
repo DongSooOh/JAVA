@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function createStudent(이름, 국어, 영어, 수학, 과학) {
+				return { // {}가 있을 때 그 내부는 객체
+					이름: 이름,
+					국어: 국어,
+					영어: 영어,
+					수학: 수학,
+					과학: 과학,
+					
+					getSum () {
+						return this.국어 + this.영어 + this.수학 + this.과학;
+					},
+					
+					getAverage () {
+						return this.getSum() / 4;
+					},
+					
+					toString () { // output += s;라고만 해도 호출이 됨
+						return `${this.이름}\t${this.getSum()}점\t${this.getAverage()}점\n`;
+					}
+				}
+			}
+			
+			const students = [];
+			students.push(createStudent('구름', 87, 98, 88, 90));
+			students.push(createStudent('별이', 92, 98, 96, 88));
+			students.push(createStudent('겨울', 76, 96, 94, 86));
+			students.push(createStudent('바다', 98, 52, 98, 92));
+			
+			let output = '이름\t총점\t평균\n';
+			
+			for (const s of students) {
+				output += s.toString(); // output += s; 객체를 문자열로 변환하는 과정에서 자동으로 toString() 메소드가 호출됨.
+				// 따라서 동일한 결과를 얻으나 가독성과 명시성을 고려할 때 toString()을 호출하는 것이 코드의 의도를 명확하게 전달할 수 있음.
+			}
+			console.log(output);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOMcontentloaded_event</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// document.addEventListener()는 특정 이벤트(여기서는 DOMContentLoaded)가 발생했을 때 실행할 함수를 등록하는 역할
+				const h1 = (text) => `<h1>${text}</h1>`;
+				document.body.innerHTML += h1('DOMContentLoaded 이벤트 발생');
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

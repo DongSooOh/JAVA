@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>appendChild</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const divA = document.querySelector('#first'); // id 속성이 first인 divA 태그를 선택
+				const divB = document.querySelector('#second');
+				
+				const h1 = document.createElement('h1') // h1 태그를 생성
+				h1.textContent = '<이동하는 h1 태그>' // textContent 입력한 문자열을 그대로 넣음
+				
+				const toFirst = () => {
+					divA.appendChild(h1); // divA에 h1을 추가(자식)
+					setTimeout(toSecond, 500); // 0.5초(500) 뒤 toSecond 함수를 실행 
+				}
+				const toSecond = () => {
+					divB.appendChild(h1);
+					setTimeout(toFirst, 1000); // 1초(1000) 뒤 toFirst 함수를 실행
+				}
+				toFirst();
+			})
+		</script>
+	</head>
+	<body>
+		<div id="first">
+			<h1># 첫 번째 div 태그 내부</h1>
+		</div>
+		<hr>
+		<div id="second">
+			<h1># 두 번째 div 태그 내부</h1>
+		</div>
+	</body>
+</html>

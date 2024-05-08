@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>exception_try_catch_return_finally</title>
+		<script>
+			function test () {
+				try {
+					alert('A 위치입니다.');
+					throw "예외 강제 발생";
+				} catch (exception) {
+					alert('B 위치입니다.');
+					return;
+				} finally { // finally는 의무적으로 실행(return 무시)
+					alert('C 위치입니다.');  // 해당 코드도 출력
+				}
+			}
+			
+			test(); // 함수 호출
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

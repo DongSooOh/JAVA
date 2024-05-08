@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>scope</title>
+		<script>
+			/* 스코프(scope)는 변수가 존재하는 범위로 같은 단계에 있을 경우 충돌
+				이러한 스코프 단계를 변경하고자 ① 중괄호를 사용, ② 함수를 생성하여 블록을 생성함 */
+			let pi = 3.14;
+			console.log(`파이 값은 ${pi}입니다.`);
+			
+			{ // ① 중괄호를 사용한 블록을 생성
+				let pi = 3.1415;
+				console.log(`파이 값은 ${pi}입니다.`);
+			}
+			console.log(`파이 값은 ${pi}입니다.`); // 중괄호에 있지 않아 9번 줄에 있는 3.14가 출력
+			
+			function sample() { // ② 함수를 생성하여 블록을 생성
+				let pi = 3.141592;
+				console.log(`파이 값은 ${pi}입니다.`);
+			}
+			sample();
+			console.log(`파이 값은 ${pi}입니다.`); // 동일하게 함수 내부에 없어 9번 줄에 있는 3.14 출력
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

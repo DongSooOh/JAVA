@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>callback_map</title>
+		<script>
+			let numbers = [273, 52, 103, 32, 57];
+			
+			numbers = numbers.map(function(value, index, array) { // 매개변수로 value, index, array를 갖는 콜백 함수를 사용
+			// map()는 콜백 함수에서 리턴한 값들을 기반으로 새로운 배열을 만드는 함수	
+				return value * value;
+			});
+			
+			numbers.forEach(console.log);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

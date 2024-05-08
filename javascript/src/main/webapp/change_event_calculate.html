@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>change_event_calculate</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				let num1, num2;
+				let cmnum = 10, innum = 25.4;
+				
+				const cmselect = document.querySelector('.cm2');
+				const cminput = document.querySelector('.cm');
+				const cmspan = document.querySelector('.cm3');
+				
+				const inselect = document.querySelector('.in2');
+				const ininput = document.querySelector('.in');
+				const inspan = document.querySelector('.in3');
+				
+				const calculate1 = () => {
+					cmspan.textContent = (num1 * cmnum).toFixed(2); // 소수점 2번째 자리까지만 출력
+				}
+				cmselect.addEventListener('change', (event) => {
+					const options = event.currentTarget.options;
+					const index = event.currentTarget.options.selectedIndex;
+					cmnum = Number(options[index].value); // 항목을 선택하면 항목의 value 속성을 추출
+					calculate1();
+				})
+				cminput.addEventListener('keyup', (event) => {
+					num1 = Number(event.currentTarget.value); // 값을 입력하면 현재 값을 추출
+					calculate1();
+				})
+				
+				const calculate2 = () => {
+					inspan.textContent = (num2 * innum).toFixed(2);
+				}
+				inselect.addEventListener('change', (event) => {
+					const options = event.currentTarget.options;
+					const index = event.currentTarget.options.selectedIndex;
+					innum = Number(options[index].value);
+					calculate2();
+				})
+				ininput.addEventListener('keyup', (event) => {
+					num2 = Number(event.currentTarget.value);
+					calculate2();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" class="cm"> cm =
+		<span class="cm3"></span>
+		<select class="cm2">
+			<option value="10">mm</option>
+			<option value="0.01">m</option>
+			<option value="0.393701">inch</option>
+		</select>
+		<br>
+		<input type="text" class="in"> inch =
+		<span class="in3"></span>
+		<select class="in2">
+			<option value="25.4">mm</option>
+			<option value="2.54">cm</option>
+			<option value="0.0254">m</option>
+		</select>
+	</body>
+</html>

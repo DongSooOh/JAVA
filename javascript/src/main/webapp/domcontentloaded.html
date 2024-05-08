@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOMContentloaded</title>
+		<script>
+			const h = (text) => `<h1>${text}<h1>`;
+		</script>
+		<script>
+			document.body.innerHTML += h('1번째 script 태그'); 
+			// <body>가 생성되기 이전에 <script>로 조작(body가 나오기 전에 호출하고 사라짐)
+		</script>
+	</head>
+	<body>
+		<script>
+			document.body.innerHTML += h('2번째 script 태그');
+		</script>
+		<h1>1번째 h1 태그</h1>
+		<script>
+			document.body.innerHTML += h('3번째 script 태그');
+		</script>
+		<h1>2번째 h1 태그</h1>
+	</body>
+</html>

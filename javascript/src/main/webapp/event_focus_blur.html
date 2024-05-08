@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_focus_blur</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const textarea = document.querySelector('textarea');
+				const h1 = document.querySelector('h1');
+				let timeId; // 상수 선언(초기화는 X)
+				
+				textarea.addEventListener('focus', (event) => { // 입력 양식 활성화
+					timeId = setInterval(() => {
+						const length = textarea.value.length;
+						h1.textContent = `글자 수: ${length}`;
+					}, 50);
+				})
+				textarea.addEventListener('blur', (event) => { // 입력 양식 비활성화
+					clearInterval(timeId);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<h1></h1>
+		<textarea></textarea>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>change_event_multiple_select</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const select = document.querySelector('select');
+				const p = document.querySelector('p');
+				
+				select.addEventListener('change', (event) => {
+					const options = event.currentTarget.options;
+					const list = [];
+					
+					for (const option of options) { // for of : of 뒤 인덱스의 요소를 of 앞에 저장
+						if (option.selected) {
+							list.push(option.textContent); // 배열명.push(): 배열에 요소 값 저장
+						};
+					};
+					p.textContent = `선택: ${list.join(', ')}`;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<select multiple>
+			<option>강아지</option>
+			<option>고양이</option>
+			<option>물고기</option>
+			<option>곤충</option>
+		</select>
+		<p></p>
+	</body>
+</html>

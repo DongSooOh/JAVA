@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>class_inheritance_extends</title>
+		<script>
+			class Rectangle { // Rectangle 클래스
+				constructor (width, height) { // 생성자 constructor의 실제 명칭은 Rectangle
+					this.width = width;
+					this.height = height;
+				}
+				
+				getPerimeter () { // 둘레를 구하는 메소드
+					return 2 * (this.width + this.height);
+				}
+				
+				getArea () { // 넓이를 구하는 메소드
+					return this.width * this.height;
+				}
+			}
+			
+			class Square extends Rectangle { // 자식 클래스 extends 부모 클래스(extends: 상속 예약어)
+				constructor (length) { // ② 매개변수 값이 1개로 ①에서 하나의 매개변수(10)만 전달 
+					super(length, length); // super()(부모 생성자 호출)는 반드시 첫 번째 줄에서만 사용
+					// ③ 전달된 매개변수인 10을 2번 넣음.(10, 10)
+				}
+			}
+			
+			const square = new Square(10, 20); // ① 매개변수 값이 2개
+			console.log(`정사각형의 둘레: ${square.getPerimeter()}`);
+			console.log(`정사각형의 넓이: ${square.getArea()}`);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

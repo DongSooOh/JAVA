@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>rest_parameter_min_max</title>
+		<script>
+			function min(...items) {
+				let output = items[0];
+				
+				for (const item of items) {
+					if (output > item) {
+						output = item;
+					}
+				}
+				return output;
+			}
+			console.log('min(52, 273, 32, 103, 275, 24, 57)');
+			console.log(`= ${min(52, 273, 32, 103, 275, 24, 57)}`);
+			
+			function max(...items) {
+				let output = items[0];
+				
+				for (const item of items) {
+					if (output < item) {
+						output = item;
+					}
+				}
+				return output;
+			}			
+			console.log('max(52, 273, 32, 103, 275, 24, 57)');
+			console.log(`= ${max(52, 273, 32, 103, 275, 24, 57)}`);		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

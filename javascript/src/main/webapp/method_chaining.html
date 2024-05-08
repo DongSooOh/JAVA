@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>method_chaining</title>
+		<script>
+			let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+			
+			numbers
+				.filter((value) => value % 2 === 0) // filter는 리턴값이 true인 것들만 모아 새로운 배열을 재구성
+				.map((value) => value * value) 		// map은 리턴값을 기반으로 새로운 배열을 구성
+				.forEach((value) => { 				// forEach는 단순히 배열 내부의 요소를 사용하여 호출
+					console.log(value);
+				});
+			/* 화살표 함수(=>)는 (매개변수) => { 리턴값 } 
+				ex) ( A ) => { B }, 매개변수 A를 B로 리턴해줌
+			*/
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

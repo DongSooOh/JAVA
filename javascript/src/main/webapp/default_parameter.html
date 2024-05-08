@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>default_parameter</title>
+		<script>
+			function earnings(name, wage=9860, hours=40) {
+				console.log(`# ${name} 님의 급여 정보`);
+				console.log(` - 시급: ${wage}원`);
+				console.log(` - 근무 시간: ${hours}시간`);
+				console.log(` - 급여: ${wage * hours}원`);
+				console.log(''); // 줄바꿈
+			}
+			
+			earnings('구름'); // wage와 hours를 입력하지 않아 최저 임금(9860)과 시간(40H)
+			
+			earnings('별', 10000); // 시급은 10000, 시간(40H)
+			
+			earnings('인성', 10000, 52); // 시급 10000, 52H
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>timer_set</title>
+		<script>
+			setTimeout(() => { // setTimeout(함수, 시간)은 특정 시간 후에 함수를 한번 호출(휘발성 X)
+				console.log('1초 후에 실행됩니다.');
+			}, 1 * 1000); // 여기서 1000은 1초를 의미
+			
+			let count = 0;
+			setInterval(() => { // setInterval(함수, 시간)은 특정 시간마다 함수를 호출
+				console.log(`1초마다 실행됩니다.(${count}번째)`);
+				count++;
+			}, 1 * 1000);
+			/* 화살표 함수(=>)는 (매개변수) => { 리턴값 } */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

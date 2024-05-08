@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3번_final</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+        	// 이름, 입력 시 성적표에 반영
+            const input_name = document.querySelector('#user_name');
+            const output_name = document.querySelector('.name');
+            const inputs = document.querySelectorAll('.test');
+            const sum = document.querySelector('.sum');
+            const ave = document.querySelector('.ave');
+
+            input_name.addEventListener('keyup', (event) => {
+                output_name.textContent = event.currentTarget.value;
+           
+            /*  const value_name = event.currentTarget.value;
+		 		output_name.textContent = `${value_name}`;
+		 		
+		 	 	event.currentTarget은 이벤트가 발생한 요소를 가리킴.
+		 		그 발생한 요소의 value 속성은 해당 입력필드의 값을 나타냄.
+		 		따라서 입력필드의 값을 output_name.textContent에 할당함으로써
+		 		위 2줄을 'output_name.textContent = event.currentTarget.value;'로 간략하게 작성이 가능 */
+                
+            });
+
+            // 학생 객체 생성 및 성적 계산
+            class Student {
+                constructor(name, kor, eng, mat, sci) {
+                    this.name = name;
+                    this.kor = kor;
+                    this.eng = eng;
+                    this.mat = mat;
+                    this.sci = sci;
+                }
+                getSum() {
+                    return this.kor + this.eng + this.mat + this.sci;
+                }
+                getAverage() {
+                    return this.getSum() / 4;
+                }
+            }
+
+            // 성적 입력 시 총점과 평균 계산 및 표시
+            const student = new Student('', 0, 0, 0, 0); // 객체 생성 및 초기화, 초기값 설정(문자열, 숫자)
+            
+            inputs.forEach((input) => { // inputs을 반복하면서 각 요소에 대한 이벤트 리스너를 추가
+                input.addEventListener('input', () => { // 입력 요소에 'input'(매개변수) 이벤트 리스너를 추가
+               	// 해당 코드는 사용자가 입력할 때마다 실행되고 학생 객체 업데이트 및 총점과 평균을 계산하여 표시
+                    
+               		student[input.name] = Number(input.value); // 사용자가 입력한 해당 과목의 값을 학생 객체에 대입
+               		// []는 속성 선택자로 input 요소의 name 속성(kor, eng 등등)을 사용하여 해당 과목을 식별하고 
+               		// input 요소의 값(value)을 숫자로 변환하여 해당 과목의 속성에 할당
+               		// ex) student['kor'] = 80
+                    sum.textContent = student.getSum(); // 총점 업데이트, getSum() 메소드 호출하여 return값을 sum에 대입
+                    ave.textContent = student.getAverage().toFixed(1); // 평균 업데이트, getAverage() 메소드를 호출하여 
+                    // return 값을 소수점 아래 한 자리까지 반올림하여 ave에 대입 
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>성적 입력</legend>
+            <p>이름: <input type="text" id="user_name"></p>
+            <span>국어: <input type="number" class="test" name="kor" min="0" max="100">점</span>
+            <span>영어: <input type="number" class="test" name="eng" min="0" max="100">점</span>
+            <span>수학: <input type="number" class="test" name="mat" min="0" max="100">점</span>
+            <span>과학: <input type="number" class="test" name="sci" min="0" max="100">점</span>
+            <p><input type="submit" value="제출하기"></p>
+        </fieldset>
+        <fieldset>
+            <legend>성적표</legend>
+            <div>
+                <p>이름: <span class="name"></span></p>
+                <p>총점: <output class="sum"></output></p>
+                <p>평균: <output class="ave"></output></p>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

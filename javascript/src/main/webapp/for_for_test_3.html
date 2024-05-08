@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>for_for_test_3</title>
+		<script>
+			let output = '';
+			
+			for ( let n = 1; n <= 6; n++ ) {
+				for ( let z = 6; z > n; z-- ) {
+					output += ' ';
+				}	
+				for ( let m = 1; m <= 2 * n - 1; m++ ) {
+					output += '@';
+				}
+				output += '\n';
+			}
+			
+			console.log(output);
+			document.write(output);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

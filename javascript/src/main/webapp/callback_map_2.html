@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>callback_map</title>
+		<script>
+			let numbers = [273, 52, 103, 32, 57];
+			
+			numbers = numbers.map(function(value) { // 함수 내부에서 value만 사용하므로 value만 매개변수로 넣음
+				return value * value;
+			});
+			
+			numbers.forEach(console.log);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

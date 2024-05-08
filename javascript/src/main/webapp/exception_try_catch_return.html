@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>exception_try_catch_return</title>
+		<script>
+			function test () {
+				try {
+					alert('A 위치입니다.');
+					throw "예외 강제 발생"; // throw 예외를 강제로 발생시킴, throws 예외를 떠넘김 
+				} catch (exception) {
+					alert('B 위치입니다.');
+					return;
+				}
+				alert('C 위치입니다.'); // return으로 해당 코드는 실행되지 않음
+			}
+			
+			test(); // 함수를 호출
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

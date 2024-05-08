@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>preventDefault_img</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const imgs = document.querySelectorAll('img');
+				
+				imgs.forEach((img) => {
+					img.addEventListener('contextmenu', (event) => {
+						event.preventDefault(); // preventDefault(): 컨텍스트 메뉴를 출력하는 기본 이벤트 제거
+						// 이미지 우클릭 막기
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="https://cdn.pixabay.com/photo/2016/02/18/18/37/puppy-1207816_1280.jpg" alt="강아지">
+		<img src="https://cdn.pixabay.com/photo/2023/12/15/21/47/cat-8451431_1280.jpg" alt="고양이">
+		<img src="https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg" alt="산과 바다">
+	</body>
+</html>

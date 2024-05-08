@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>isFinite</title>
+		<script>
+			const n = 10 / 0;
+			console.log(n);
+			
+			const m = -10 / 0;
+			console.log(m);
+			
+			console.log(Number.isFinite(n)); // Finite 유한한 숫자인지 확인
+			console.log(Number.isFinite(m)); // False : infinity 무한대
+			console.log(Number.isFinite(1)); // is로 시작되는 메소드를 사용하면 true or false로 반환
+			console.log(Number.isFinite(10));
+			
+			console.log(Number.isNaN(n)); // Not a Number, 숫자인지 확인
+			console.log(Number.isNaN(m));
+			console.log(Number.isNaN(10));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

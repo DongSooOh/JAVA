@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array_isarray</title>
+		<script>
+			function min(first, ...rests) {
+				let output;
+				let items;
+				
+				if (Array.isArray(first)){ // Array.isArray() 메소드는 매개변수가 배열인지 판별
+					output = first[0]; // first가 배열이면 그 요소들을 output에 넣어줌
+					items = first; // 배열 자체를 할당
+				} else if (typeof(first) === 'number') { // typeof() === 'number'로 숫자인지 확인
+					output = first; // first가 숫자면 output에 넣어줌
+					items = rests; // 나머지 매개변수는 rests 배열에 넣어줘서 반복하여 처리
+				}
+				
+				for (const item of items) {
+					if (output > item) {
+						output = item;
+					}
+				}
+				return output;
+			}
+			
+			console.log(`min(배열): ${ min([52, 273, 32, 103, 275, 24, 57]) }`);
+			console.log(`min숫자, ...): ${ min([52, 273, 32, 103, 275, 24, 57]) }`);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

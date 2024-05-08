@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date</title>
+		<script>
+			const date = new Date();
+			
+			const year = date.getFullYear(); // Year는 FullYear로 사용(명명 규칙)
+			const month = date.getMonth() +1; // 월은 0~11로 저장되어 +1 같이 사용
+			const day = date.getDate();
+			const hours = date.getHours();
+			const minutes = date.getMinutes();
+			const seconds = date.getSeconds();
+			
+			document.write(`오늘 날짜는 ${year}년 ${month}월 ${day}일입니다.<br>`);
+			document.write(`현재 시각은 ${hours}시 ${minutes}분 ${seconds}초입니다.`);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

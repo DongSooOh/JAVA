@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>email_regular_expression</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const input = document.querySelector('input');
+				const p = document.querySelector('p');
+				const isEmail = (value) => { // 이메일인지 검사하는 함수
+					return (value.indexOf('@') > 1) && (value.split('@')[1].indexOf('.') > 1);
+					/* 	value.indexOf('@'): value의 @가 들어있는 인덱스 값이 1보다 큰지
+						(value.split('@')[1].indexOf('.'): value를 @로 구분했을 때 1번째 인덱스의 값을 기준으로 .의 인덱스 값이 1보다 큰지)
+						dongsoo@naver.com 에서 @로 구분하면 dongsoo는 [0], naver.com이 [1]
+					*/
+				};
+				
+				input.addEventListener('keyup', (event) => {
+					const value = event.currentTarget.value; // event.currentTarget은 input을 참조
+					
+					if (isEmail(value)) {
+						p.style.color = 'green';
+						p.textContent = `이메일 형식입니다: ${value}`;
+					} else {
+						p.style.color ='red';
+						p.textContent = `이메일 형식이 아닙니다: ${value}`;
+					};
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text">
+		<p></p>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>function_method_this</title>
+		<script>
+			const test = {
+					a: function () { // 익명 함수로 정의
+						console.log(this); // 해당 메소드가 속한 객체에 대한 참조인 'this'가 출력
+					},
+					b: () => { // 화살표 함수로 정의
+						console.log(this); // 자신의 'this'를 갖지 않고, 상위 스코프의 'this'와 동일하게 유지
+					} // 따라서 b()가 호출될 때 'this'는 전역 객체를 가리키므로 a()와 결과값이 다름
+			};
+			
+			test.a();
+			test.b();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
