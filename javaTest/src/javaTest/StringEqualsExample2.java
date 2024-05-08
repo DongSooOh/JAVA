@@ -1,0 +1,34 @@
+package javaTest;
+
+public class StringEqualsExample2 {
+	public static void main(String[] args) {
+
+		String strVar1 = "신민철";
+		String strVar2 = "신민철"; // strVar1과 strVar2는 동일한 참조(주소값)을 가짐
+
+		if (strVar1 == strVar2) { // A == B: A와 B의 주소값 비교
+			System.out.println("strVar1과 strVar2는 참조(주소)가 같음");
+		} else {
+			System.out.println("strVar1과 strVar2는 참조가 다름");
+		}
+
+		if (strVar1.equals(strVar2)) { // A.equals(B): A와 B의 문자열 비교
+			System.out.println("strVar1과 strVar2는 문자열이 같음");
+		}
+
+		String strVar3 = new String("신민철"); // strVar3과 strVar4는 동일한 참조(주소값)을 가지지 않음.
+		String strVar4 = new String("신민철"); // 각각 객체를 생성(다른 주소값)
+
+		if (strVar3 == strVar4) {
+			System.out.println("strVar3과 strVar4는 참조(주소)가 같음");
+		} else {
+			System.out.println("strVar3과 strVar4는 참조가 다름");
+		}
+
+		if (strVar3.equals(strVar4)) {
+			System.out.println("strVar3과 strVar4는 문자열이 같음");
+		}
+
+	}
+
+}
