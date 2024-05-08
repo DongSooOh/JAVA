@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>표 만들기</title>
+	<style>
+		table, td {
+			border:1px solid #ccc;
+		}
+		td {
+			padding:15px;
+		}
+		tr > td:nth-child(odd) {
+			width:120px;
+		}
+		tr > td:nth-child(even) {
+			width:300px;
+		}
+	</style>	
+</head>
+<body>
+	<table>
+		<tr>
+			<td>이름</td>
+			<td></td>
+			<td>연락처</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td>자기소개</td>
+			<td colspan="3"></td>
+		</tr>
+	</table>
+</body>
+</html>
